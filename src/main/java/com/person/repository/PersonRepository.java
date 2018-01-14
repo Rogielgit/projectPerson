@@ -42,4 +42,11 @@ public class PersonRepository implements IPersonRepository{
     public void setSessionFactory(SessionFactory sf) {
         this.sessionFactory = sf;
     }
+
+    @Override
+    public Person findPersonById(int id) {
+        Session session = this.sessionFactory.getCurrentSession();
+        Person person = (Person) session.get(Person.class, id);
+        return person;
+    }
 }

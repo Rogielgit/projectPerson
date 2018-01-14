@@ -12,5 +12,6 @@ public interface IPersonRepository {
    public void deletePerson(int id);
    public List<Person> listPerson();
    public void setSessionFactory(SessionFactory sf);
+   public Person findPersonById(int id);
 
 }

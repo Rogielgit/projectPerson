@@ -29,9 +29,14 @@ public class PersonService implements IPersonService{
         personRepository.deletePerson(id);
     }
 
-    @Transactional(readOnly = true, propagation = Propagation.SUPPORTS)
+    @Transactional
     public List<Person> listPerson() {
        return personRepository.listPerson();
+    }
+
+    @Transactional
+    public Person findPersonById(int id) {
+        return personRepository.findPersonById(id);
     }
 
     public void setiPersonRepository(PersonRepository iPersonRepository) {

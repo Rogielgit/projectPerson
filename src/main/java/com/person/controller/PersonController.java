@@ -3,7 +3,6 @@ package com.person.controller;
 import com.person.model.Person;
 import com.person.service.IPersonService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -22,6 +21,11 @@ public class PersonController {
     @ResponseStatus(OK)
     public @ResponseBody List<Person> listPersons() {
         return personService.listPerson();
+    }
+
+    @GetMapping("/{id}")
+    public @ResponseBody Person findPersonById(@PathVariable ("id") int id ) {
+        return personService.findPersonById(id);
     }
 
     @PostMapping

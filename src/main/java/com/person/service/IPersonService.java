@@ -10,4 +10,5 @@ public interface IPersonService {
     public void updatePerson(Person p);
     public void deletePerson(int id);
     public List<Person> listPerson();
+    public Person findPersonById(int id);
 }
